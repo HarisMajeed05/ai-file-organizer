@@ -1,0 +1,9 @@
+name: ai-file-organizer
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - ffmpeg
+  - pip:
+      - -r helper/requirements.txt

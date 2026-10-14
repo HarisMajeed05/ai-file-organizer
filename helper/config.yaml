@@ -1,0 +1,53 @@
+# Folders to organize. Subfolders are included when recursive is true.
+# On Windows use forward slashes or single quotes.
+watch_paths:
+  - "C:\\Users\\haris\\OneDrive\\Pictures\\Screenshots"
+  # - "D:/MixedFiles"
+
+recursive: true
+
+# true = only logs what would happen, nothing is moved. Set to false when the log looks right.
+dry_run: false
+
+# Process files that already exist when the program starts.
+scan_existing: true
+
+# Sorted files go to <watch_path>/<organized_folder>/<Category>/
+organized_folder: "Organized"
+review_folder: "Needs_Review"
+
+# Skip any folder containing one of these files (treated as a software project).
+protect_project_dirs: true
+project_markers:
+  [
+    ".git",
+    "package.json",
+    "pyproject.toml",
+    "requirements.txt",
+    "pom.xml",
+    "Cargo.toml",
+    "go.mod",
+    "composer.json",
+  ]
+
+ignore_dirs:
+  [
+    ".git",
+    "node_modules",
+    "__pycache__",
+    "venv",
+    ".venv",
+    "env",
+    ".idea",
+    ".vscode",
+    "$RECYCLE.BIN",
+    "System Volume Information",
+  ]
+ignore_extensions:
+  [".crdownload", ".part", ".partial", ".tmp", ".lnk", ".ini", ".db"]
+ignore_hidden: true
+
+# false = nothing is sent to Groq, all files go to Needs_Review.
+allow_external_ai: true
+confidence_threshold: 0.75
+max_file_mb: 50
